@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-02T11:28:08.232Z</updated>
+  <updated>2018-12-02T14:01:11.302Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>apache设置代理访问nodejs</title>
+    <link href="http://yoursite.com/2018/12/02/apache%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E8%AE%BF%E9%97%AEnodejs/"/>
+    <id>http://yoursite.com/2018/12/02/apache设置代理访问nodejs/</id>
+    <published>2018-12-02T12:04:34.000Z</published>
+    <updated>2018-12-02T14:01:11.302Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-修改apache配置文件httpd-conf配置文件，开启以下模块，去掉前面的-号即可："><a href="#1-修改apache配置文件httpd-conf配置文件，开启以下模块，去掉前面的-号即可：" class="headerlink" title="1.修改apache配置文件httpd.conf配置文件，开启以下模块，去掉前面的#号即可："></a>1.修改apache配置文件httpd.conf配置文件，开启以下模块，去掉前面的<code>#</code>号即可：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LoadModule proxy_module modules/mod_proxy.so</span><br><span class="line">LoadModule proxy_http_module modules/mod_proxy_http.so</span><br></pre></td></tr></table></figure><h3 id="2-设置域名：http-www-xxx-com代理nodejs的3000端口服务"><a href="#2-设置域名：http-www-xxx-com代理nodejs的3000端口服务" class="headerlink" title="2.设置域名：http://www.xxx.com代理nodejs的3000端口服务"></a>2.设置域名：<code>http://www.xxx.com</code>代理nodejs的<code>3000</code>端口服务</h3><p>​      修改虚拟主机配置文件：<code>vhosts.conf</code> </p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:<span class="number">80</span>&gt;</span><br><span class="line">  ServerName www.xxx.com</span><br><span class="line">  ProxyRequests Off</span><br><span class="line">  &lt;Proxy *&gt;</span><br><span class="line">    <span class="keyword">Require</span> all granted  </span><br><span class="line">  &lt;/Proxy&gt;</span><br><span class="line">  &lt;Location /&gt;</span><br><span class="line">    ProxyPass http:<span class="comment">//127.0.0.1:3000/</span></span><br><span class="line">    ProxyPassReverse http:<span class="comment">//127.0.0.1:3000/</span></span><br><span class="line">  &lt;/Location&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure><h3 id="3-在电脑中设置hosts文件映射"><a href="#3-在电脑中设置hosts文件映射" class="headerlink" title="3.在电脑中设置hosts文件映射"></a>3.在电脑中设置hosts文件映射</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 api.vueshop.com</span><br></pre></td></tr></table></figure><h3 id="4-开启nodejs的3000端口服务"><a href="#4-开启nodejs的3000端口服务" class="headerlink" title="4.开启nodejs的3000端口服务"></a>4.开启nodejs的3000端口服务</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.end(<span class="string">'代理成功'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="string">"3000"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"请访问 http://127.0.0.1:3000"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h3 id="5-浏览器中输入http-www-xxx-com访问可以看到以下响应结果："><a href="#5-浏览器中输入http-www-xxx-com访问可以看到以下响应结果：" class="headerlink" title="5.浏览器中输入http://www.xxx.com访问可以看到以下响应结果："></a>5.浏览器中输入<code>http://www.xxx.com</code>访问可以看到以下响应结果：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代理成功</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-修改apache配置文件httpd-conf配置文件，开启以下模块，去掉前面的-号即可：&quot;&gt;&lt;a href=&quot;#1-修改apache配置文件httpd-conf配置文件，开启以下模块，去掉前面的-号即可：&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
+    
+  </entry>
   
   <entry>
     <title>natappp_内网穿透</title>
