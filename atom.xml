@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-02T10:55:47.043Z</updated>
+  <updated>2018-12-02T11:28:08.232Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>natappp_内网穿透</title>
+    <link href="http://yoursite.com/2018/12/02/natappp-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    <id>http://yoursite.com/2018/12/02/natappp-内网穿透/</id>
+    <published>2018-12-02T11:16:50.000Z</published>
+    <updated>2018-12-02T11:28:08.232Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="微信公众号开发者模式"><a href="#微信公众号开发者模式" class="headerlink" title="微信公众号开发者模式"></a>微信公众号开发者模式</h3><p>微信公众平台，可以在后台设置自动回复，但有时这个也满足不了我们的需求，可以开启开发模式，把公众号的消息回调到自己的服务器去处理。</p><p>微信公众平台提供了服务器接入的方式，具有开发能力的运营者，可以进行定制开发。</p><p>开发者模式：特别适合企业，所以我们说的微信公众号开发就是说开发者模式的学习与使用。</p><p>==开发者模式需要<strong>一台外网能访问到的服务器</strong>==</p><p><strong>==注意：==</strong>微信公众平台管理中，编辑模式和开发者模式是==互斥的==，也就是说只能使用其中一种。</p><p>开发者模式有2种请求方式：</p><p>==被动==：</p><p><img src="/2018/12/02/natappp-内网穿透/9" alt="1543199906702"></p><p>==主动==：</p><p><img src="/2018/12/02/natappp-内网穿透/10.png" alt="1543199922625"></p><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>实际的开发工作中，我们首先需要有一个外网服务器，比如 阿里云、腾讯云、百度云等；而对于我们当前学习测试阶段，我们可以换一种方案代替外网服务器：==内网穿透==。</p><h5 id="内网穿透基本介绍"><a href="#内网穿透基本介绍" class="headerlink" title="内网穿透基本介绍"></a>内网穿透基本介绍</h5><p>natapp软件,它给我们提供一个外网的域名，通过此软件，把我们内网的IP和端口，映射到它自己的服务器上面，这样公众号服务器访问到他们的服务器上面，然后它在转发到我们的内网中，这样就实现了内网的穿透。</p><p>网址：<a href="https://natapp.cn/" target="_blank" rel="noopener">https://natapp.cn/</a></p><p>软件平台，需要注册，注册是免费不花钱的。可以免费使用，需要是成年人并且实名认证。</p><p><img src="/2018/12/02/natappp-内网穿透/16" alt="1543289685702"></p><h5 id="注册natapp"><a href="#注册natapp" class="headerlink" title="注册natapp"></a>注册natapp</h5><ol><li><p>首先进入官网进行注册：</p><p><img src="/2018/12/02/natappp-内网穿透/17" alt="1543289857212"></p><p>注册成功后进行需要进行实名认证：</p><p><img src="/2018/12/02/natappp-内网穿透/18" alt="1543290055619"></p><p>点击后填写信息即可：</p><p><img src="/2018/12/02/natappp-内网穿透/19" alt="1543290511148"></p></li></ol><h5 id="购买隧道"><a href="#购买隧道" class="headerlink" title="购买隧道"></a>购买隧道</h5><ol><li><p>在后台界面点击：购买隧道–》免费隧道</p><p><img src="/2018/12/02/natappp-内网穿透/21" alt="1543290963279"></p><p>填写信息，点击购买：</p><p><img src="/2018/12/02/natappp-内网穿透/20" alt="1543299668463"></p></li><li><p>成功后查看：</p><p><img src="/2018/12/02/natappp-内网穿透/22" alt="1543291116310"></p><p>列表中的==autotoken==是一个非常重要的信息，不要给别人，这就是我们进行内网穿透，的凭证，用此凭证，我们就可以知道其身份，所以不要乱给别人使用，会影响到自己的环境的使用。</p></li></ol><h5 id="本机配置"><a href="#本机配置" class="headerlink" title="本机配置"></a>本机配置</h5><ol><li><p>下载软件：</p><p>软件下载: <a href="https://natapp.cn/#download" target="_blank" rel="noopener">https://natapp.cn/#download</a></p><p><img src="/2018/12/02/natappp-内网穿透/23" alt="1543291335687"></p><p>将软件解压缩：</p><p><img src="/2018/12/02/natappp-内网穿透/24" alt="1543291470046"></p></li><li><p>在解压后的文件夹中新建一个名为config.ini文件，</p><p><img src="/2018/12/02/natappp-内网穿透/25" alt="1543291614473"></p><p>打开后构建如下配置内容：</p><p><img src="/2018/12/02/natappp-内网穿透/26" alt="1543291715483"></p></li><li><p>在apache主配置文件httpd.conf中增加如下配置：</p><p><img src="/2018/12/02/natappp-内网穿透/27" alt="1543299753287"></p><p><img src="/2018/12/02/natappp-内网穿透/28" alt="1543299774986"></p></li><li><p>接着在apache的虚拟主机配置文件中增加如下配置：</p><p><img src="/2018/12/02/natappp-内网穿透/29" alt="1543299925913"></p><p>重启apache，</p><p><img src="/2018/12/02/natappp-内网穿透/30" alt="1543299951683"></p></li><li><p>测试访问项目文件：</p><p>在day1/code目录下创建一个info.php文件，内容如下：</p><p><img src="/2018/12/02/natappp-内网穿透/31" alt="1543300014439"></p><p>然后在浏览器中访问：</p><p><img src="/2018/12/02/natappp-内网穿透/32" alt="1543300046197"></p><p>访问成功！</p></li><li><p>跟着进入natapp.exe所在目录，并且在当前目录下打开cmd黑窗口，</p><p>进入目录：</p><p><img src="/2018/12/02/natappp-内网穿透/33" alt="1543300118293"></p><p>打开黑窗口：</p><p><img src="/2018/12/02/natappp-内网穿透/34" alt="1543300146683"></p><p>在黑窗口中输入natapp后按回车：</p><p>输入：</p><p><img src="/2018/12/02/natappp-内网穿透/35" alt="1543300202624"></p><p>回车后，出现如下界面；==<strong>注意：</strong>不要关闭下面的界面==：</p><p><img src="/2018/12/02/natappp-内网穿透/36" alt="1543300347942"></p></li><li><p>使用远程地址替换本地地址进行测试访问：</p><p><img src="/2018/12/02/natappp-内网穿透/37" alt="1543300457362"></p><p>访问成功，说明配置OK。</p></li></ol><h4 id="下载官方接入代码"><a href="#下载官方接入代码" class="headerlink" title="下载官方接入代码"></a>下载官方接入代码</h4><p>下载地址：<a href="http://t.cn/RkGPhCJ" target="_blank" rel="noopener">http://t.cn/RkGPhCJ</a></p><p><img src="/2018/12/02/natappp-内网穿透/40" alt="1543309403216"></p><p>下载后进行解压：</p><p><img src="/2018/12/02/natappp-内网穿透/41" alt="1543309502497"></p><h4 id="开启开发模式"><a href="#开启开发模式" class="headerlink" title="开启开发模式"></a>开启开发模式</h4><ol><li><p>首先进入后台 设置–》公众号设置   启用开发者密码（点击后将会要求填写相关认证信息）：</p><p><img src="/2018/12/02/natappp-内网穿透/44" alt="1543310037754"></p><p>启用成功后界面效果为：</p><p><img src="/2018/12/02/natappp-内网穿透/45" alt="1543310411131"></p></li><li><p>然后将官方接入程序文件拷贝一份到day1/code目录下，并且改名为wx.php</p><p><img src="/2018/12/02/natappp-内网穿透/46" alt="1543312898271"></p><p>拷贝到day1/code下并改名：</p><p><img src="/2018/12/02/natappp-内网穿透/47" alt="1543312931075"></p><p>wx.php的内容：</p><p><img src="/2018/12/02/natappp-内网穿透/48" alt="1543312988123"></p></li><li><p>继续在该界面点击修改配置，填写相关信息：</p><p>点击：</p><p><img src="/2018/12/02/natappp-内网穿透/49" alt="1543313026174"></p><p>填写信息：</p><p><img src="/2018/12/02/natappp-内网穿透/38" alt="1543312806076"></p></li><li><p>提交后再点击启用按钮启用开发者模式：</p><p><img src="/2018/12/02/natappp-内网穿透/50" alt="1543313078620"></p><p>启用后界面效果为：</p><p><img src="/2018/12/02/natappp-内网穿透/51" alt="1543313103093"></p><p>到此，开发模式就已经开启成功。</p></li></ol><h3 id="微信公众平台测试平台使用"><a href="#微信公众平台测试平台使用" class="headerlink" title="微信公众平台测试平台使用"></a>微信公众平台测试平台使用</h3><p>因为我们使用的订阅号和服务号没有认证，所以很多的接口没有提供给我们，这样在测试的阶段和开发的阶段就没有办法进行了，所以公众号考虑到开发者的此情况的存在，故提供了一个测试平台公众号，用此公众号来开发测试，可以有所有的权限，这样对我们的开发就没有障碍了。但是不包括支付接口。 </p><p>测试平台登陆页面地址（需要扫码登陆）：<a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login</a></p><h4 id="测试平台接入"><a href="#测试平台接入" class="headerlink" title="测试平台接入"></a>测试平台接入</h4><p>登陆平台后，填写接口配置信息并提交：</p><p><img src="/2018/12/02/natappp-内网穿透/52" alt="1543314069508"></p><p><strong>==注意：==</strong>上图中URL地址需要和 公众平台后台开发者模式设置的地址一致；Token也需要保持一致。</p><p>提交后提示成功界面效果如下说明接入测试平台成功：</p><p><img src="/2018/12/02/natappp-内网穿透/53" alt="1543314200184"></p><h4 id="接收普通消息"><a href="#接收普通消息" class="headerlink" title="接收普通消息"></a>接收普通消息</h4><ol><li><p>将day1/code/wx.php中的代码进行调整，构建测试代码：</p><p><img src="/2018/12/02/natappp-内网穿透/54" alt="1543323599745"></p></li><li><p>我们当前使用的是PHP7.x，故将类wechatCallbackapiTest中reponseMsg方法里一句过时的代码改为可用的代码：</p><p><img src="/2018/12/02/natappp-内网穿透/55" alt="1543323702316"></p></li><li><p>扫码关注测试公众号：</p><p><img src="/2018/12/02/natappp-内网穿透/56" alt="1543323745937"></p><p>发送消息，查看测试公众号返回给用户的消息：</p><p><img src="/2018/12/02/natappp-内网穿透/57" alt="1543323899564"></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;微信公众号开发者模式&quot;&gt;&lt;a href=&quot;#微信公众号开发者模式&quot; class=&quot;headerlink&quot; title=&quot;微信公众号开发者模式&quot;&gt;&lt;/a&gt;微信公众号开发者模式&lt;/h3&gt;&lt;p&gt;微信公众平台，可以在后台设置自动回复，但有时这个也满足不了我们的需求，可以开
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="内网穿透" scheme="http://yoursite.com/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>JS字符串常用方法</title>
