@@ -29,7 +29,7 @@
     <!--Title-->
 
 
-<title>我的博客</title>
+<title>JS数组常用方法 | 我的博客</title>
 
 
     <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
@@ -134,9 +134,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="">
+        <h1 id="JS数组常用方法">
             
-	            NO Title!
+	            JS数组常用方法
             
         </h1>
         <div class="post-meta">
@@ -144,8 +144,8 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/ ">
-             
+        <a href="/categories/前端">
+            前端
         </a>
     </span>
     
@@ -155,6 +155,10 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
+                
+                    <a href="/tags/js数组" title="js数组">
+                        js数组
+                    </a>
                 
             
         </span>
@@ -176,7 +180,7 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="JavaScript字符串常用方法"><a href="#JavaScript字符串常用方法" class="headerlink" title="JavaScript字符串常用方法"></a>JavaScript字符串常用方法</h1><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+        <h1 id="JavaScript数组常用方法"><a href="#JavaScript数组常用方法" class="headerlink" title="JavaScript数组常用方法"></a>JavaScript数组常用方法</h1><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
 <li><p>所谓数组，就是一堆数据的集合（容器），里面存放各种各样的数据。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br></pre></td></tr></table></figure>
 </li>
@@ -284,7 +288,6 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.unique = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = []; <span class="comment">// 存放已遍历的满足条件的元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">        <span class="comment">// indexOf()判断当前元素是否已存在</span></span><br><span class="line">        <span class="keyword">if</span> (n.indexOf(<span class="keyword">this</span>[i]) == <span class="number">-1</span>) n.push(<span class="keyword">this</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log( arr.unique() );  <span class="comment">// [1, 2, 3, 6]</span></span><br></pre></td></tr></table></figure>
 <h3 id="数组中是否存在于某个值"><a href="#数组中是否存在于某个值" class="headerlink" title="数组中是否存在于某个值"></a>数组中是否存在于某个值</h3><p>可以用indexOf方法来判断，存在返回元素下标，不存在返回-1</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inArray</span>(<span class="params">value,arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arr.indexOf(value)!== <span class="number">-1</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log( inArray(<span class="number">2</span>,arr) ); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log( inArray(<span class="number">4</span>,arr) ); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-<p>由于笔者才学疏浅，文章有错误的地方望大家批评指正，一起学习进步。</p>
 
     </div>
     
@@ -318,41 +321,14 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-    
-        <a href="/2018/12/02/JS字符串常用方法/" class="next-post btn btn-default" title="">
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs"></span><i class="fa fa-angle-right fa-fw"></i>
+        <a href="/2018/12/02/JavaScript字符串常用方法/" class="pre-post btn btn-default" title="JS字符串常用方法">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">JS字符串常用方法</span>
         </a>
+    
     
 </div>
 
-
-    <div id="comments">
-        
-    
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: false,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'null'.toLowerCase()
-        })
-    </script>
-
-
-    </div>
 
 
 
@@ -364,7 +340,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript字符串常用方法"><span class="toc-text">JavaScript字符串常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#join"><span class="toc-text">join()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop"><span class="toc-text">pop()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push"><span class="toc-text">push()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unshift"><span class="toc-text">unshift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shift"><span class="toc-text">shift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-text">sort()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slice"><span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toString-NaN"><span class="toc-text">toString()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#splice"><span class="toc-text">splice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reverse"><span class="toc-text">reverse()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#isArray"><span class="toc-text">isArray()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concat"><span class="toc-text">concat()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foreach"><span class="toc-text">foreach()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter"><span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map"><span class="toc-text">map()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reduce"><span class="toc-text">reduce()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组去重"><span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组中是否存在于某个值"><span class="toc-text">数组中是否存在于某个值</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript数组常用方法"><span class="toc-text">JavaScript数组常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#join"><span class="toc-text">join()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop"><span class="toc-text">pop()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push"><span class="toc-text">push()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unshift"><span class="toc-text">unshift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shift"><span class="toc-text">shift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-text">sort()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slice"><span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toString-NaN"><span class="toc-text">toString()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#splice"><span class="toc-text">splice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reverse"><span class="toc-text">reverse()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#isArray"><span class="toc-text">isArray()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concat"><span class="toc-text">concat()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foreach"><span class="toc-text">foreach()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter"><span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map"><span class="toc-text">map()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reduce"><span class="toc-text">reduce()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组去重"><span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组中是否存在于某个值"><span class="toc-text">数组中是否存在于某个值</span></a></li></ol></li></ol>
         
     </div>
 </aside>

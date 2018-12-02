@@ -29,7 +29,7 @@
     <!--Title-->
 
 
-<title>你好 | 我的博客</title>
+<title>Category: 前端 | 我的博客</title>
 
 
     <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
@@ -130,100 +130,67 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="你好">
-            
-	            你好
-            
-        </h1>
-        <div class="post-meta">
+                <main class="col-md-8 main-content ">
+                    <h3>
     
+        前端
     
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/分类2">
-            分类2
-        </a>
-    </span>
-    
+</h3>
 
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/标签1" title="标签1">
-                        标签1
-                    </a>
-                
-                    <a href="/tags/标签2" title="标签2">
-                        标签2
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
+    <article class="post">
         
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/12/02</span>
-        </span>
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/12/02/JavaScript字符串常用方法/">JS字符串常用方法</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年12月02日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    JavaScript字符串常用方法字符串
+字符串就是一个或多个排列在一起的字符，放在单引号或双引号之中。
+12&#39;abc&#39;&quot;abc&quot;
+
+length属性js里的字符串类似于数组，都是一个一个字符拼凑在一起组成的，因此可以用length属...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
         
-    
-</div>
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/12/02/JavaScript数组常用方法/">JS数组常用方法</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年12月02日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    JavaScript数组常用方法数组
+所谓数组，就是一堆数据的集合（容器），里面存放各种各样的数据。
+1var arr = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
 
-            
-            
-    </div>
-    
-    <div class="post-body post-content">
-        
-    </div>
-    
-        <div class="reward">
-    <div class="reward-wrap">赏
-        <div class="reward-box">
-            
-            
-                <span class="reward-type">
-                    <img class="wechat" src="../img/reward-wepay.jpg"><b>微信打赏</b>
-                </span>
-            
+length属性可以用length属性取得数组(集合)的长度
+12var ar...
+                
+            </p>
         </div>
-    </div>
-    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
-</div>
+    </article>
+ 
 
 
-    
-    <div class="post-footer">
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
-            
-        </div>
-        <div>
-            
-        </div>
-    </div>
-</article>
 
-<div class="article-nav prev-next-wrap clearfix">
-    
-        <a href="/2018/12/02/JS字符串常用方法/" class="pre-post btn btn-default" title="">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs"></span>
-        </a>
-    
-    
-</div>
 
 
 
@@ -232,14 +199,103 @@
 
                 </main>
                 
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">Table of Contents</h3>
+                    
+    <aside class="col-md-4 sidebar">
         
-            <p>暂无目录</p>
+        
+    <div class="widget">
+        <h3 class="title">搜索</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢?">
+                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+        
+        
+    <div class="widget">
+      <h3 class="title">社交</h3> 
+        <div class="content social">
+            
+	            <a href="" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
+			    	<i class="qq fa fa-qq"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="微信" target="_blank">
+			    	<i class="weixin fa fa-weixin"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">分类</h3>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/"><i class="fa" aria-hidden="true">前端</i></a><span class="category-list-count">2</span></li></ul>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">归档</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/"><i class="fa" aria-hidden="true">2018年12月</i></a><span class="archive-list-count">2</span></li></ul>
+    </div>
+
+
+        
+        
+  <div class="widget">
+    <h3 class="title">标签</h3>
+    <div class="content tag-cloud">
+        
+            <a href="/tags/js字符串/" style="font-size: 10px;">js字符串</a> <a href="/tags/js数组/" style="font-size: 10px;">js数组</a>
         
     </div>
-</aside>
+  </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">友情链接</h3>
+        <div class="content friends-link">
+        
+            <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">Hexo官网</a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
 
                 
             </div>
@@ -282,6 +338,8 @@
     </div>
 </div>
 
+
+	<script src="/js/search.js?rev=@@hash"></script>
 
 
 
