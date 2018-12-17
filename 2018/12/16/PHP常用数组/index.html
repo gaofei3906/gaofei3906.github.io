@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html lang="null">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="我的博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+<meta name="keywords" content="zh-cn">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>php常用数组方法 | 我的博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="高立飞">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 书山有路勤为径，学海无崖苦作舟 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">我的博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/myweb/index.html"><i class="fa "></i>个人介绍</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="php常用数组方法">
+            
+	            php常用数组方法
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/后端">
+            后端
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/php常用数组" title="php常用数组">
+                        php常用数组
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/12/16</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="数组的基本函数"><a href="#数组的基本函数" class="headerlink" title="数组的基本函数"></a>数组的基本函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">count($arr)					<span class="comment">#获取数组元素的总个数</span></span><br><span class="line">max($arr)					<span class="comment">#找出数组中的最大值</span></span><br><span class="line">min($arr)					<span class="comment">#找出数组中的最小值</span></span><br><span class="line">    </span><br><span class="line">array_unshift($arr,value)			<span class="comment">#在数组第一位中添加元素</span></span><br><span class="line">array_shift($arr)				<span class="comment">#删除数组第一位元素</span></span><br><span class="line">array_push($arr,value)				<span class="comment">#在数组后面添加新元素(可添加多个)</span></span><br><span class="line">array_pop($arr)					<span class="comment">#在数组后面删除一个元素</span></span><br><span class="line"></span><br><span class="line">array_fill($start_index,$num,$value)		<span class="comment">#用给定的值填充数组</span></span><br><span class="line">array_slice($array,$offset)			<span class="comment">#截取数组中的内容, 返回新数组</span></span><br><span class="line"></span><br><span class="line">array_reverse($arr) 			<span class="comment">#将元素的顺序颠倒过来,如果存在索引类型下标,将会重置下标从0开始,字符串类型下标,则保存字符串类型下标</span></span><br><span class="line">array_merge($arr1,$arr2)		<span class="comment">#合并数组,索引类型下标会被重新规划,关联类型下标不会改变</span></span><br><span class="line">range($start,$end)			<span class="comment">#按照指定字符范围构建数组</span></span><br><span class="line">array_values($arr)			<span class="comment">#获得数组的值</span></span><br><span class="line">array_keys($arr)			<span class="comment">#一次性提取指定数组的所有下标,形成一个新的下标从0开始的索引数组</span></span><br><span class="line">array_flip($arr)			<span class="comment">#数组中的值与键名互换（如果有重复前面的会被后面的覆盖）</span></span><br><span class="line">in_array(<span class="string">"value"</span>,$arr)			<span class="comment">#在数组中检索value</span></span><br><span class="line">array_search(<span class="string">"value"</span>,$arr)		<span class="comment">#在数组中检索value，如果存在返回键名</span></span><br><span class="line">array_key_exists(<span class="string">"key"</span>,$arr)		<span class="comment">#检索给定的键名是否存在数组中</span></span><br><span class="line"><span class="keyword">isset</span>($arr[key])			<span class="comment">#检索给定的键名是否存在数组中</span></span><br></pre></td></tr></table></figure>
+<h3 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h3><p><code>以元素值对数组排序</code> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sort($arr [,$sort_flags])		    <span class="comment">#值 升序 排序,会重置下标从0开始</span></span><br><span class="line">asort($arr [,$sort_flags])		    <span class="comment">#值 升序 排序,下标保留原有不变</span></span><br><span class="line">rsort($arr [,$sort_flags])	            <span class="comment">#值 降序 排列,会重置下标从0开始</span></span><br><span class="line">arsort($arr [,$sort_flags])	            <span class="comment">#值 降序 排列,下标保留原有不变</span></span><br></pre></td></tr></table></figure>
+<p><code>以键名对数组排序</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ksort($arr [,$sort_flags])	        <span class="comment">#数组的下标进行 升序 排列</span></span><br><span class="line">krsort($arr [,$sort_flags])	        <span class="comment">#数组的下标进行 降序 排列</span></span><br><span class="line">shuffle($arr [,$sort_flags])	    	<span class="comment">#随机打乱数组值的顺序,会重置下标从0开始自然增长</span></span><br></pre></td></tr></table></figure>
+<p><code>自然排序法</code> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">natsort($arr)                       <span class="comment">#自然排序（忽略键名）</span></span><br><span class="line">natcasesort($arr)                   <span class="comment">#自然排序（忽略大小写，忽略键名）</span></span><br></pre></td></tr></table></figure>
+<h3 id="元素指针函数"><a href="#元素指针函数" class="headerlink" title="元素指针函数"></a>元素指针函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">current($arr)                       <span class="comment">#返回数组中的当前单元</span></span><br><span class="line">pos($arr)			    <span class="comment">#返回数组中的当前单元</span></span><br><span class="line">key($arr)			    <span class="comment">#返回数组中当前单元的键名</span></span><br><span class="line">prev($arr)                          <span class="comment">#将数组中的内部指针倒回一位</span></span><br><span class="line">next($arr)                          <span class="comment">#将数组中的内部指针向前移动一位</span></span><br><span class="line">end($arr)                           <span class="comment">#将数组中的内部指针指向最后一个单元</span></span><br><span class="line">reset($arr)                         <span class="comment">#将数组中的内部指针指向第一个单元</span></span><br><span class="line">each($arr)                          <span class="comment">#返回数组当前元素一个键名/值的构造数组，并使数组指针向前移动一位</span></span><br><span class="line"><span class="keyword">list</span>($var1,$var2)=$arr              <span class="comment">#把数组中的值赋给一组变量</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="../img/.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/12/04/git常用命令/" class="next-post btn btn-default" title="git常用命令">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">git常用命令</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的基本函数"><span class="toc-text">数组的基本函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的排序"><span class="toc-text">数组的排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元素指针函数"><span class="toc-text">元素指针函数</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-04T04:52:01.773Z</updated>
+  <updated>2018-12-17T06:31:10.086Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>php常用数组方法</title>
+    <link href="http://yoursite.com/2018/12/16/PHP%E5%B8%B8%E7%94%A8%E6%95%B0%E7%BB%84/"/>
+    <id>http://yoursite.com/2018/12/16/PHP常用数组/</id>
+    <published>2018-12-16T10:42:53.000Z</published>
+    <updated>2018-12-17T06:31:10.086Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="数组的基本函数"><a href="#数组的基本函数" class="headerlink" title="数组的基本函数"></a>数组的基本函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">count($arr)<span class="comment">#获取数组元素的总个数</span></span><br><span class="line">max($arr)<span class="comment">#找出数组中的最大值</span></span><br><span class="line">min($arr)<span class="comment">#找出数组中的最小值</span></span><br><span class="line">    </span><br><span class="line">array_unshift($arr,value)<span class="comment">#在数组第一位中添加元素</span></span><br><span class="line">array_shift($arr)<span class="comment">#删除数组第一位元素</span></span><br><span class="line">array_push($arr,value)<span class="comment">#在数组后面添加新元素(可添加多个)</span></span><br><span class="line">array_pop($arr)<span class="comment">#在数组后面删除一个元素</span></span><br><span class="line"></span><br><span class="line">array_fill($start_index,$num,$value)<span class="comment">#用给定的值填充数组</span></span><br><span class="line">array_slice($array,$offset)<span class="comment">#截取数组中的内容, 返回新数组</span></span><br><span class="line"></span><br><span class="line">array_reverse($arr) <span class="comment">#将元素的顺序颠倒过来,如果存在索引类型下标,将会重置下标从0开始,字符串类型下标,则保存字符串类型下标</span></span><br><span class="line">array_merge($arr1,$arr2)<span class="comment">#合并数组,索引类型下标会被重新规划,关联类型下标不会改变</span></span><br><span class="line">range($start,$end)<span class="comment">#按照指定字符范围构建数组</span></span><br><span class="line">array_values($arr)<span class="comment">#获得数组的值</span></span><br><span class="line">array_keys($arr)<span class="comment">#一次性提取指定数组的所有下标,形成一个新的下标从0开始的索引数组</span></span><br><span class="line">array_flip($arr)<span class="comment">#数组中的值与键名互换（如果有重复前面的会被后面的覆盖）</span></span><br><span class="line">in_array(<span class="string">"value"</span>,$arr)<span class="comment">#在数组中检索value</span></span><br><span class="line">array_search(<span class="string">"value"</span>,$arr)<span class="comment">#在数组中检索value，如果存在返回键名</span></span><br><span class="line">array_key_exists(<span class="string">"key"</span>,$arr)<span class="comment">#检索给定的键名是否存在数组中</span></span><br><span class="line"><span class="keyword">isset</span>($arr[key])<span class="comment">#检索给定的键名是否存在数组中</span></span><br></pre></td></tr></table></figure><h3 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h3><p><code>以元素值对数组排序</code> </p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sort($arr [,$sort_flags])    <span class="comment">#值 升序 排序,会重置下标从0开始</span></span><br><span class="line">asort($arr [,$sort_flags])    <span class="comment">#值 升序 排序,下标保留原有不变</span></span><br><span class="line">rsort($arr [,$sort_flags])            <span class="comment">#值 降序 排列,会重置下标从0开始</span></span><br><span class="line">arsort($arr [,$sort_flags])            <span class="comment">#值 降序 排列,下标保留原有不变</span></span><br></pre></td></tr></table></figure><p><code>以键名对数组排序</code></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ksort($arr [,$sort_flags])        <span class="comment">#数组的下标进行 升序 排列</span></span><br><span class="line">krsort($arr [,$sort_flags])        <span class="comment">#数组的下标进行 降序 排列</span></span><br><span class="line">shuffle($arr [,$sort_flags])    <span class="comment">#随机打乱数组值的顺序,会重置下标从0开始自然增长</span></span><br></pre></td></tr></table></figure><p><code>自然排序法</code> </p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">natsort($arr)                       <span class="comment">#自然排序（忽略键名）</span></span><br><span class="line">natcasesort($arr)                   <span class="comment">#自然排序（忽略大小写，忽略键名）</span></span><br></pre></td></tr></table></figure><h3 id="元素指针函数"><a href="#元素指针函数" class="headerlink" title="元素指针函数"></a>元素指针函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">current($arr)                       <span class="comment">#返回数组中的当前单元</span></span><br><span class="line">pos($arr)    <span class="comment">#返回数组中的当前单元</span></span><br><span class="line">key($arr)    <span class="comment">#返回数组中当前单元的键名</span></span><br><span class="line">prev($arr)                          <span class="comment">#将数组中的内部指针倒回一位</span></span><br><span class="line">next($arr)                          <span class="comment">#将数组中的内部指针向前移动一位</span></span><br><span class="line">end($arr)                           <span class="comment">#将数组中的内部指针指向最后一个单元</span></span><br><span class="line">reset($arr)                         <span class="comment">#将数组中的内部指针指向第一个单元</span></span><br><span class="line">each($arr)                          <span class="comment">#返回数组当前元素一个键名/值的构造数组，并使数组指针向前移动一位</span></span><br><span class="line"><span class="keyword">list</span>($var1,$var2)=$arr              <span class="comment">#把数组中的值赋给一组变量</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;数组的基本函数&quot;&gt;&lt;a href=&quot;#数组的基本函数&quot; class=&quot;headerlink&quot; title=&quot;数组的基本函数&quot;&gt;&lt;/a&gt;数组的基本函数&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;g
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="php常用数组" scheme="http://yoursite.com/tags/php%E5%B8%B8%E7%94%A8%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>git常用命令</title>
